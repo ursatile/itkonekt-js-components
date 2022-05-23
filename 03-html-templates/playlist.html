@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Playlists!</title>
+    <link type="text/css" rel="stylesheet" href="playlist.css" />
+</head>
+
+<body>
+    <h4>Let's Make A Playlist!</h4>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Artist</th>
+                <th>Title</th>
+                <th>Album</th>
+                <th>Search</th>
+            </tr>
+        </thead>
+        <tbody id="playlist-body">
+            <!-- the table body will be populated by our JavaScript code -->
+        </tbody>
+    </table>
+
+    <template id="playlist-entry-template">
+        <tr>
+            <td id="artist-td">HELLO</td>
+            <td id="song-td"></td>
+            <td id="album-td"></td>
+            <td><a id="search-link">search</a></td>
+        </tr>
+    </template>
+
+    <form>
+        <p>Add a song to the playlist:</p>
+        <label for="artist-input">Artist:</label>
+        <input type="text" name="artist" id="artist-input" /><br />
+        <label for="song-input">Song:</label>
+        <input type="text" name="song" id="song-input" /><br />
+        <label for="album-input">Album:</label>
+        <input type="text" name="album" id="album-input" /><br />
+        <input type="button" value="Add to Playlist" onclick="addSongToPlaylist(this.form);" />
+    </form>
+    <script type="text/javascript" src="playlist.js"></script>
+</body>
+
+</html>

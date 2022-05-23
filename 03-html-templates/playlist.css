@@ -1,0 +1,19 @@
+form label {
+    width: 4em;
+    float: left;
+    clear: both;
+}
+form input {
+    margin-bottom: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr td, table tr th {
+    border: 1px solid #999;
+    padding: 4px;
+    text-align: left;
+}

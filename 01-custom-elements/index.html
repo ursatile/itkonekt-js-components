@@ -6,7 +6,10 @@
 </head>
 
 <body>
+    <hello-world name="ITKonekt"></hello-world>
+    <hello-world name=""></hello-world>
     <hello-world></hello-world>
+    <hello-world count="5"></hello-world>
     <script>
         class HelloWorldElement extends HTMLElement {
             constructor() {
@@ -17,7 +20,18 @@
             connectedCallback() {
                 console.log('connectedCallback()');
                 let content = document.createElement('p');
-                content.innerHTML = 'Hello World (via createElement and appendChild)!';
+                let name = this.getAttribute("name") ?? "World";
+                // if (name) {
+                //     console.log("name was true! (truthy)");
+                // } else {
+                //     console.log("name was falsy!");
+                // }
+                // if (name === null) {
+                //     console.log("name was null");                    
+                // } else {
+                //     console.log("name was not null");
+                // }
+                content.innerHTML = `Hello ${name}`;
                 this.appendChild(content);
             }
         }

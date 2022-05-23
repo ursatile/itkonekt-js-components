@@ -5,6 +5,8 @@
     <title>Custom Elements</title>
 </head>
 <body>
+    <h1 is="special-heading">This heading still appears as a heading to SEO crawlers.</h1>
+    <my-special-heading>SEO crawlers will still see this content, but they don't know it's important.</my-special-heading>
     <p is="word-count">So far, we’ve only built custom elements that extend HTMLElement. We can also extend many of the built-in HTML tags to create special elements that add custom behaviour to standard HTML elements.</p>
     <p is="word-count">Custom components can implement the attributeChangedCallback method to be notified if the host page changes an attribute value via JavaScript.</p>
     <script>

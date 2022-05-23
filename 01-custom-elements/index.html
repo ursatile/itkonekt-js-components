@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Custom Elements</title>
+</head>
+
+<body>
+    <hello-world></hello-world>
+    <script>
+        class HelloWorldElement extends HTMLElement {
+            constructor() {
+                super()
+                console.log('called the constructor()');
+            }
+
+            connectedCallback() {
+                console.log('connectedCallback()');
+                let content = document.createElement('p');
+                content.innerHTML = 'Hello World (via createElement and appendChild)!';
+                this.appendChild(content);
+            }
+        }
+        customElements.define("hello-world", HelloWorldElement);
+    </script>
+
+</body>
+
+</html>

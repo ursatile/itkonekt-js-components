@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>JS without modules</title>
+        <style>
+            canvas { border: 1px solid #000; }
+            fieldset { width: 600px; box-sizing: border-box; }
+        </style>
+        <script type="module" src="paintbox.js"></script>
+        <script nomodule src="paintbox-without-modules.js"></script>
+    </head>
+    <body>
+        <canvas id="canvas" width="600" height="600" style="width: 600px; height: 600px;"></canvas>
+        <form id="shape-selector">
+        <fieldset>
+            <legend>Choose a shape. Click to draw.</legend>
+            <label for="happy-face-input"><input checked id="happy-face-input" type="radio" name="shape" value="happy-face" /> Happy Face</label><br />
+            <label for="flag-de-input"><input id="flag-de-input" type="radio" name="shape" value="flag-de" /> German Flag</label><br />
+            <label for="pink-flower-input"><input id="pink-flower-input" type="radio" name="shape" value="pink-flower" /> Pink Flower</label><br />            
+        </fieldset>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Color Picker</title>
+    <script src="color-picker.js"></script>
+</head>
+
+<body>
+    <h1 id="my-headline-1">This is headline 1</h1>
+    <color-picker for="my-headline-1"></color-picker>
+    <h1 id="my-headline-2">This is headline 2</h1>
+    <color-picker for="my-headline-2"></color-picker>
+    <h1 id="my-headline-3">This is headline 3</h1>
+    <color-picker for="my-headline-3"></color-picker>
+    <script>
+        document.querySelectorAll("color-picker").forEach(function(picker) {
+            picker.addEventListener("pick-color",
+            function (event) {
+                let elementId = event.target.getAttribute("for");
+                let heading = document.getElementById(elementId);
+                heading.style.color = event.detail;
+            });
+        });
+    </script>
+</body>
+
+</html>

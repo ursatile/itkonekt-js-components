@@ -3,13 +3,27 @@
 
 <head>
     <title>Event Handlers</title>
+    <style>
+        div {
+            padding: 20px;
+            background-color: #9f9;
+        }
+        fieldset {
+            margin: 20px;
+            background-color: #9ff;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Use element.addEventListener</h1>
-    <button id="button3">Button 3</button>
-    <button id="button4">Button 4</button>
-    <button id="button5">Button 5</button>
+    <div id="buttons">
+        <fieldset id="fieldset">
+            <button id="button3">Button 3</button>
+            <button id="button4">Button 4</button>
+            <button id="button5">Button 5</button>
+        </fieldset>
+    </div>
     <script>
         let buttons = document.querySelectorAll('button');
         buttons.forEach(b => {
@@ -21,7 +35,7 @@
         function clearHighlight() {
             this.style.backgroundColor = '';
         }
-        
+
         function highlight() {
             this.style.backgroundColor = '#f0f';
         }
@@ -32,8 +46,8 @@
         }
     </script>
 
-        
-    
+
+
 
 
 </body>

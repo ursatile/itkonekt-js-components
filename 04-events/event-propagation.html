@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Handlers</title>
+    <style>
+        div {
+            padding: 20px;
+            margin: 10px 0;
+            background-color: #9f9;
+        }
+
+        fieldset {
+            margin: 20px;
+            background-color: #9ff;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://google.com" id="google-link">click here to go to Google</a>
+    <script>
+        document.getElementById('google-link').addEventListener('click',
+        function(event) {
+            console.log('You clicked a link!');
+            event.cancelBubble = true;
+            event.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

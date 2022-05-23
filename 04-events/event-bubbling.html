@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Handlers</title>
+    <style>
+        div {
+            padding: 20px;
+            margin: 10px 0;
+            background-color: #9f9;
+        }
+
+        fieldset {
+            margin: 20px;
+            background-color: #9ff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Use element.addEventListener</h1>
+    <div id="buttons">
+        <button id="button1">Button 1</button>
+        <button id="button2">Button 2</button>
+        <button id="button3">Button 3</button>
+    </div>
+    <button id="add-new-thing-button">
+        add a new button!
+    </button>
+    
+    <script>
+        let buttonNumber = 3;
+        document.getElementById('add-new-thing-button').addEventListener('click',
+            function () {
+                let button = document.createElement('button');
+                button.innerText = `Button ${++buttonNumber}`;
+                document.getElementById('buttons').appendChild(button);
+            });
+
+        document.getElementById('buttons').addEventListener('click', hello);
+
+        function hello(evt) {
+            console.log(evt);
+            alert(`Hello from ${evt.target.innerText}`);
+        }
+    </script>
+
+
+
+
+
+</body>
+
+</html>

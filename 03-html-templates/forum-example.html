@@ -1,0 +1,22 @@
+<template>
+    <div class="forum-post">
+        <div class="avatar-image">
+            <slot name="avatar-image"></slot>
+        </div>
+        <p>
+            <slot></slot>
+        </p>
+        <span class="forum-post-user-info">posted at
+            <slot name="post-date"></slot> by
+            <slot name="post-user"></slot>
+        </span>
+    </div>
+</template>
+
+
+<forum-post>
+    This is a forum post! With some text in it!
+    <img slot="avatar-image" src="jerry-minion.png" />
+    <a slot="post-date">11:39 on 23 May 2022</a>
+    <a slot="post-user" href="/users/jerry">Jerry Minion</a>
+</forum-post>

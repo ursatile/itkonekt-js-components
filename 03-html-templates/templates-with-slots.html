@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Templates with slots!</title>    
+</head>
+
+<body>
+    <big-red-title>Look! This is a big red title!</big-red-title>
+
+    <script>
+        class BigRedTitleElement extends HTMLElement {
+            constructor() {
+                super();   
+                let template = document.createElement('template');
+                template.innerHTML = `<slot style="font-size: 200%; color: red;"></slot>`;
+                let node = template.content.cloneNode(true);
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.appendChild(node);
+            }
+        }
+        customElements.define("big-red-title", BigRedTitleElement);
+    </script>
+
+
+</body>

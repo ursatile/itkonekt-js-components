@@ -1,0 +1,13 @@
+body {
+    text-align: center;
+}
+input[type="button"] {
+    background-color: #ffcc00;
+    color: #000;
+    font-size: 100%;
+    text-align: center;
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 0;
+}

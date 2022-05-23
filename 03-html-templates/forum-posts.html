@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Named Slots</title>
+    <script src="forum-posts.js"></script>
+    <link type="text/css" rel="stylesheet" href="forum-posts.css" />
+</head>
+
+<body>    
+    <forum-post>
+        <p>This is a paragraph at the TOP of the custom content</p>
+        <img slot="avatar-image" src="https://m.media-amazon.com/images/I/61mFim9J5xL._SY355_.jpg" />
+        <div>this is a random div</div>
+        <a slot="post-date">11:48 on 23 May 2022</a>
+        <img style="width: 200px;" src="https://icatcare.org/app/uploads/2018/07/Helping-your-new-cat-or-kitten-settle-in-1.png" /> look! a kitten!
+        <a slot="post-user" href="/users/bob">Bob Minion</a>
+        <p>And here's a paragraph!</p>
+    </forum-post>
+
+    <forum-post>
+        Banana! I like banana! Banana? BA! BA! BA! BANANA!
+        <img slot="avatar-image" src="jerry-minion.png" />
+        <a slot="post-date">15:52 on 5 January 2021</a>
+        <a slot="post-user" href="/users/jerry">Jerry Minion</a>
+    </forum-post>
+    <forum-post>
+        I also like bananas, Jerry, but there's no need for that kind of language.
+        <img slot="avatar-image" src="stuart-minion.png" />
+        <a slot="post-date">16:08 on 5 January 2021</a>
+        <a slot="post-user" href="/users/stuart">Stuart Minion</a>
+    </forum-post>
+    <forum-post>
+        <p>Here's a photograph of my favourite banana:</p>
+        <img src="banana.png" style="border: 1px solid #f00;" alt="A photograph of a banana" />
+        <p>Here is a list of things I love about my banana:</p>
+        <ul>
+            <li>It's a banana!</li>
+            <li>It's yellow.</li>      
+            <li>BANANA.</li>      
+        </ul>
+        <p>Read more about bananas on <a href="https://www.google.co.uk/search?q=banana">Wikipedia</a>.</p>
+        <img slot="avatar-image" src="jerry-minion.png" />
+        <a slot="post-date">16:24 on 5 January 2021</a>
+        <a slot="post-user" href="/users/jerry">Jerry Minion</a>
+    </forum-post>
+</body>
+
+</html>

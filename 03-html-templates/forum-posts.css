@@ -1,0 +1,30 @@
+div.forum-post {
+    border: 1px solid #999;
+    margin: 8px;
+    background-color: #ccc;
+    position: relative;
+    min-height: 110px;
+    padding-left: 120px;
+    padding-bottom: 20px;
+}
+div.forum-post div.avatar-image {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+}
+span.forum-post-user-info {
+    display: block;
+    border-top: 1px solid #000;
+    padding: 4px 0 0 0;
+    font-size: 0.8em;
+    position: absolute;
+    left: 120px;
+    right: 10px;
+    bottom: 10px;
+}
+div.avatar-image ::slotted(img) {
+    border: 1px solid #000;
+    border-radius: 16px;
+    width: 100px;
+    height: 100px;
+}

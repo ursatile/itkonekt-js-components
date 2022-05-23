@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Handlers</title>
+</head>
+
+<body>
+    <h1>Method 1: old school 1990s style</h1>
+    <a href="#" onmouseover="this.style.color='red';"
+    onmouseout="this.style.color='';"
+    >hover over this link!</a>
+    <hr />
+    <h1>Attach an event handler (inline)</h1>
+    <button id="button1" onclick="helloWorldFromButton1()">Button 1</button>
+    <script>
+        function helloWorldFromButton1() {
+            alert('hello world from button 1');
+        }
+    </script>
+    <h1>Attach an event handler (via script)</h1>
+    <button id="button2">Button 2</button>
+    <script>
+        let button2 = document.getElementById('button2');
+        button2.onclick = function() {
+            alert('Hello World from button 2');
+        }
+    </script>
+    <h1>Use element.addEventListener</h1>
+    <button id="button3">Button 3</button>
+    <script>
+        let button3 = document.getElementById('button3');
+        button3.addEventListener('click', helloFromButton3);
+
+        function helloFromButton3() {
+            alert('Hello World from button3!');
+        }
+    </script>
+
+        
+    
+
+
+</body>
+
+</html>

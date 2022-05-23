@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Event Handlers</title>
+</head>
+
+<body>
+    <h1>Use element.addEventListener</h1>
+    <button id="button3">Button 3</button>
+    <button id="button4">Button 4</button>
+    <button id="button5">Button 5</button>
+    <script>
+        let buttons = document.querySelectorAll('button');
+        buttons.forEach(b => {
+            b.addEventListener('click', hello);
+            b.addEventListener('mouseenter', highlight);
+            b.addEventListener("mouseleave", clearHighlight);
+        });
+
+        function clearHighlight() {
+            this.style.backgroundColor = '';
+        }
+        
+        function highlight() {
+            this.style.backgroundColor = '#f0f';
+        }
+
+        function hello() {
+            alert(`Hello from ${this.innerText}`);
+            //alert('Hello World from button3!');
+        }
+    </script>
+
+        
+    
+
+
+</body>
+
+</html>

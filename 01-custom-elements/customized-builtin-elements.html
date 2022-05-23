@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Custom Elements</title>
+</head>
+<body>
+    <p is="word-count">So far, we’ve only built custom elements that extend HTMLElement. We can also extend many of the built-in HTML tags to create special elements that add custom behaviour to standard HTML elements.</p>
+    <p is="word-count">Custom components can implement the attributeChangedCallback method to be notified if the host page changes an attribute value via JavaScript.</p>
+    <script>
+        class WordCountParagraphElement extends HTMLParagraphElement {
+            constructor() {
+                super();
+                let wordCount = this.innerText.split(/\s+/).length;
+                this.title = `${wordCount} words in this paragraph`;
+            }            
+        }
+        customElements.define('word-count', WordCountParagraphElement, { extends: 'p' });
+    </script>
+</body>
+</html>

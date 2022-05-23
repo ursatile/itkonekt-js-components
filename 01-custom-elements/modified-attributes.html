@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Custom Elements</title>
+</head>
+
+<body>
+    <hello-world id="greeting-element"></hello-world>
+    <hr />
+    Update: <input id="greeting-name" />
+    <button id="update-greeting-button">Update</button>
+    <script>
+        let button = document.getElementById("update-greeting-button");
+        button.addEventListener("click", function () {
+            let input = document.getElementById('greeting-name');
+            let name = input.value;
+            let greeting = document.getElementById('greeting-element');
+            greeting.setAttribute("name", name);
+            console.log(`Set greeting name to ${name}`);
+        });
+
+        class HelloWorldElement extends HTMLElement {
+            constructor() {
+                super()
+            }
+
+            greet(name) {
+                name = name ?? "World";
+                let paragraph = this.querySelector('p');
+                paragraph.innerHTML = `Hello ${name}!`;
+            }
+
+            connectedCallback() {
+                let content = document.createElement('p');
+                this.appendChild(content);
+                let name = this.getAttribute("name");
+                this.greet(name);
+            }
+
+            static get observedAttributes() { return['name']; }
+
+            attributeChangedCallback(attributeName, oldValue, newValue) {
+                console.log(`attributeChangedCallback: changing ${attributeName} from ${oldValue} to ${newValue}`);
+                this.greet(newValue);
+            }
+        }
+        customElements.define("hello-world", HelloWorldElement);
+    </script>
+
+</body>
+
+</html>

@@ -14,24 +14,15 @@
         class HelloWorldElement extends HTMLElement {
             constructor() {
                 super()
-                console.log('called the constructor()');
             }
 
             connectedCallback() {
-                console.log('connectedCallback()');
                 let content = document.createElement('p');
                 let name = this.getAttribute("name") ?? "World";
-                // if (name) {
-                //     console.log("name was true! (truthy)");
-                // } else {
-                //     console.log("name was falsy!");
-                // }
-                // if (name === null) {
-                //     console.log("name was null");                    
-                // } else {
-                //     console.log("name was not null");
-                // }
-                content.innerHTML = `Hello ${name}`;
+                let count = parseInt(this.getAttribute("count")) || 1;
+                for (var i = 0; i < count; i++) {
+                    content.innerHTML += `Hello ${name}! `;
+                }
                 this.appendChild(content);
             }
         }

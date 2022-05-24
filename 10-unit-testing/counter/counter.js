@@ -1,7 +1,7 @@
 import CountingEngine from './engine.js';
 import Renderer from './renderer.js';
 
-class MyCounterElement extends HTMLElement {
+export default class MyCounterElement extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });

@@ -7,5 +7,6 @@ test('UpArrow key increments engine', () => {
     let fakeKeydownEvent = { code: "ArrowUp" };
     counter.handleKeydown(fakeKeydownEvent);
 
-    expect(counter.engine.count).toBe(1);
+    expect(counter.engine.count).toBe(1)
+
 });

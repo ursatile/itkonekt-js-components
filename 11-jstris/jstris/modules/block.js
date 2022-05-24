@@ -1,13 +1,9 @@
 import { Cell } from "./Cell";
 
-export class Block {
-    constructor(row, col, engine) {
-        this.cells = [
-            new Cell(row, col, engine),
-            new Cell(row + 1, col, engine),
-            new Cell(row, col + 1, engine),
-            new Cell(row + 1, col + 1, engine),
-        ];
+class Block {
+    constructor(engine) {
+        this.engine = engine;
+        this.cells = [];
     }
 
     isOccupyingCell(row, col) {
@@ -36,4 +32,66 @@ export class Block {
     get className() {
         return "block";
     }
+
+    clearRow(row) {
+        this.cells = this.cells.filter(c => c.row != row);
+    }
 }
+
+
+class OBlock extends Block {
+    constructor(row, col, engine) {
+        super(engine);
+
+        this.cells = [
+            new Cell(row, col, engine),
+            new Cell(row + 1, col, engine),
+            new Cell(row, col + 1, engine),
+            new Cell(row + 1, col + 1, engine),
+        ];
+    }
+    get className() { return "o-block"; }
+}
+
+ class IBlock extends Block {
+    constructor(row, col, engine) {
+        super(engine);
+        this.cells = [
+            new Cell(row, col, engine),
+            new Cell(row + 1, col, engine),
+            new Cell(row + 2, col, engine),
+            new Cell(row + 3, col, engine),
+        ];
+    }
+    get className() { return "i-block"; }
+}
+
+ class JBlock extends Block {
+    constructor(row, col, engine) {
+        super(engine);
+
+        this.cells = [
+            new Cell(row, col, engine),
+            new Cell(row + 1, col, engine),
+            new Cell(row + 2, col, engine),
+            new Cell(row + 2, col+1, engine),
+        ];
+    }
+    get className() { return "j-block"; }
+}
+
+ class LBlock extends Block {
+    constructor(row, col, engine) {
+        super(engine);
+
+        this.cells = [
+            new Cell(row, col, engine),
+            new Cell(row + 1, col, engine),
+            new Cell(row + 2, col, engine),
+            new Cell(row + 2, col+1, engine),
+        ];
+    }
+    get className() { return "l-block"; }
+}
+
+export { LBlock, JBlock, OBlock, IBlock };

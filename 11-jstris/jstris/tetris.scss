@@ -11,11 +11,27 @@ div.tetris-grid {
         span {
             width: $cellSize;
             height: $cellSize;
-            display: inline-block;
-            margin: 1px;
-            border: 1px solid #999;
+            display: inline-block;                        
+            border: 1px outset #ccc;
+            box-sizing: border-box;
             &.block {
                 background-color: #900;
+            }
+            &.i-block {
+                border-color: #0cc;
+                background-color: #0cc;                            
+            }
+            &.j-block {
+                border-color:  #029;
+                background-color: #029;                            
+            }
+            &.o-block {
+                border-color: #ff0;
+                background-color: #ff0;                            
+            }
+            &.l-block {
+                border-color: #c60;
+                background-color: #c60;
             }
         }
     }

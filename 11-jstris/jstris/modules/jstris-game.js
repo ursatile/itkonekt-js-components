@@ -4,7 +4,7 @@ import Renderer from './renderer.js';
 export default class JstrisGameElement extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({mode: 'open'});
+        this.attachShadow({ mode: 'open' });
 
     }
     connectedCallback() {
@@ -24,7 +24,13 @@ export default class JstrisGameElement extends HTMLElement {
 
     handleKeydown(event) {
         console.log(event.code);
-        switch(event.code) {
+        switch (event.code) {
+            case "ArrowLeft":
+                this.engine.moveLeft();
+                return this.renderer.update(this.engine);
+            case "ArrowRight":
+                this.engine.moveRight();
+                return this.renderer.update(this.engine);
             case "Space": return this.tick();
         }
     }

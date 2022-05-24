@@ -1,33 +1,4 @@
-class Cell {
-    constructor(row, col, engine) {
-        this.row = row;
-        this.col = col;
-        this.engine = engine;
-    }   
-
-    okToFall() {
-        return this.engine.okToMoveIntoCell(this.row+1,this.col);
-    }
-    
-    fall() {
-        let ok = this.okToFall();
-        if (ok) this.row++;
-        return ok;
-    }
-}
-
-class Block {
-    constructor(row, col, engine) {
-        this.cells = [ new Cell(row,col,engine) ];
-    }
-    fall() {
-        this.cells.forEach(cell => cell.fall());
-    }
-
-    get className() {
-        return "block";
-    }
-}
+import { Block } from "./Block";
 
 export default class Engine {
     constructor(rows, cols) {
@@ -41,7 +12,11 @@ export default class Engine {
     };
 
     okToMoveIntoCell(row,col) {
-        if (row >= this.rows) return(false);
+        if (row < 0) return false;
+        if (col < 0) return (false);
+        if (row >= this.rows) return (false);
+        if (col >= this.cols) return (false);        
+
         return(true);
     }
 
@@ -51,5 +26,13 @@ export default class Engine {
 
     fall() {    
         if (this.fallingBlock != null) this.fallingBlock.fall();
+    }
+
+    moveLeft() {
+        if (this.fallingBlock != null) this.fallingBlock.moveLeft();
+    }
+
+    moveRight() {
+        if (this.fallingBlock != null) this.fallingBlock.moveRight();
     }
 }

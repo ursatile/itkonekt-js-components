@@ -10,12 +10,14 @@ export class Block {
         ];
     }
 
+    isOccupyingCell(row, col) {
+        return this.cells.some(c => c.row == row && c.col == col);
+    }
+
     fall() {
-        if (this.cells.every(cell => cell.okToFall())) {
-            this.cells.forEach(cell => cell.fall());
-            return true;
-        }
-        return false;
+        let ok = this.cells.every(cell => cell.okToFall());
+        if (ok) this.cells.forEach(cell => cell.fall());
+        return ok;
     }
 
 

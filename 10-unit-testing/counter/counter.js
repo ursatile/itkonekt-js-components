@@ -1,4 +1,4 @@
-import CountingEngine from './counter-engine.js';
+import CountingEngine from './engine.js';
 import Renderer from './renderer.js';
 
 class MyCounterElement extends HTMLElement {

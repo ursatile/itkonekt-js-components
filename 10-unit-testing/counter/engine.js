@@ -1,6 +1,6 @@
 export default class CountingEngine {
     constructor(count) {
-        this.initialValue = parseInt(count) || 0;
+        this.initialValue = Math.max(parseInt(count) || 0, 0);
         this.reset();
     }
     

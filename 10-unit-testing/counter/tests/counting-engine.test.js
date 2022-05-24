@@ -16,3 +16,23 @@ describe('Counting engine initialises', () => {
         });
     });
 });
+
+test('Increment works', () => {
+    let engine = new CountingEngine(5);
+    engine.increment();
+    expect(engine.count).toBe(6);
+});
+
+test('Decrement works', () => {
+    let engine = new CountingEngine(5);
+    engine.decrement();
+    expect(engine.count).toBe(4);
+});
+
+test('Reset works', () => {
+    let engine = new CountingEngine(5);
+    engine.increment();
+    expect(engine.count).not.toBe(5);
+    engine.reset();
+    expect(engine.count).toBe(5);
+});

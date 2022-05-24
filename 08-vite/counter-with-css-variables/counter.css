@@ -1,0 +1,47 @@
+:root {
+    --counter-brand-color: #099;
+    --counter-border-radius: 16px;
+    --counter-brand-font: 'Lato';
+}
+
+div.counter-wrapper {
+    display: inline-grid;
+    grid-template-columns: 32px 64px 32px;
+    grid-template-rows: 32px 24px;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-gap: 4px;
+}
+
+div.counter-wrapper>* {
+    border-radius: var(--counter-border-radius);
+}
+
+div.counter {
+    text-align: center;
+    border: 2px solid var(--counter-brand-color);
+}
+
+button {
+    font-weight: bold;
+    font-size: 120%;
+    overflow: hidden;
+    border: 0;
+    background-color: var(--counter-brand-color);
+    color: #fff;
+}
+
+button#reset-button {
+    width: auto;
+    font-size: 12px;
+    font-weight: normal;
+    width: 100%;
+    grid-column-start: 2;
+}
+
+div.counter-wrapper span {
+    font-family: var(--counter-brand-font);
+    font-weight: bold;
+    color:  var(--counter-brand-color);
+    font-size: 150%;
+}

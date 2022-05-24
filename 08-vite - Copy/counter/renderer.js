@@ -1,12 +1,12 @@
 import * as html from './html.js';
-import './counter.scss';
+
 export default class Renderer {
     constructor(shadowRoot) {
         this.shadowRoot = shadowRoot;
     }
 
     render(engine) {
-        const cssLink = html.element('link', { type: "text/css", rel: "stylesheet", href: "counter.scss" });
+        const cssLink = html.element('link', { type: "text/css", rel: "stylesheet", href: "counter.css" });
         this.shadowRoot.appendChild(cssLink);
 
         let wrapper = html.element('div', { 'class': "counter-wrapper"});

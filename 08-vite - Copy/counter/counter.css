@@ -1,3 +1,9 @@
+:root {
+    --counter-brand-color: #099;
+    --counter-border-radius: 16px;
+    --counter-brand-font: 'Lato';
+}
+
 div.counter-wrapper {
     display: inline-grid;
     grid-template-columns: 32px 64px 32px;
@@ -8,12 +14,12 @@ div.counter-wrapper {
 }
 
 div.counter-wrapper>* {
-    border-radius: 4px;
+    border-radius: var(--counter-border-radius);
 }
 
 div.counter {
     text-align: center;
-    border: 2px solid #036;
+    border: 2px solid var(--counter-brand-color);
 }
 
 button {
@@ -21,7 +27,7 @@ button {
     font-size: 120%;
     overflow: hidden;
     border: 0;
-    background-color: #036;
+    background-color: var(--counter-brand-color);
     color: #fff;
 }
 
@@ -34,8 +40,8 @@ button#reset-button {
 }
 
 div.counter-wrapper span {
-    font-family: Consolas;
+    font-family: var(--counter-brand-font);
     font-weight: bold;
-    color: #036;
+    color:  var(--counter-brand-color);
     font-size: 150%;
 }

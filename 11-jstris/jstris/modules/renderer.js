@@ -7,7 +7,6 @@ export default class Renderer {
     }
 
     render(engine) {
-
         this.root.appendChild(html.element('link', {
             rel: "stylesheet",
             href: "tetris.scss",
@@ -27,4 +26,13 @@ export default class Renderer {
         }
         this.root.appendChild(grid);
     }
+
+    update(engine) {
+        let spans = this.root.querySelectorAll("div.tetris-grid div span");
+        spans.forEach(span => span.className = null);
+        engine.blocks.forEach(block => block.cells.forEach(cell => {
+            this.spans[cell.row][cell.col].className = block.className;
+        }));
+    }
+
 }

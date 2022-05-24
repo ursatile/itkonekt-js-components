@@ -1,0 +1,41 @@
+div.counter-wrapper {
+    display: inline-grid;
+    grid-template-columns: 32px 64px 32px;
+    grid-template-rows: 32px 24px;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-gap: 4px;
+}
+
+div.counter-wrapper>* {
+    border-radius: 4px;
+}
+
+div.counter {
+    text-align: center;
+    border: 2px solid #036;
+}
+
+button {
+    font-weight: bold;
+    font-size: 120%;
+    overflow: hidden;
+    border: 0;
+    background-color: #036;
+    color: #fff;
+}
+
+button#reset-button {
+    width: auto;
+    font-size: 12px;
+    font-weight: normal;
+    width: 100%;
+    grid-column-start: 2;
+}
+
+div.counter-wrapper span {
+    font-family: Consolas;
+    font-weight: bold;
+    color: #036;
+    font-size: 150%;
+}

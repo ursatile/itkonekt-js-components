@@ -1,5 +1,5 @@
 import * as html from './html.js';
-import './counter.scss';
+// import './counter.scss';
 export default class Renderer {
     constructor(shadowRoot) {
         this.shadowRoot = shadowRoot;
